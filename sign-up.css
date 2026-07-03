@@ -47,6 +47,13 @@ h1{
     font-weight: 900;
     text-transform: uppercase;
     font-family: "Bebas";
+    animation-name: title;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes title {
+    0%{font-size: 0rem;}
+    100%{font-size: 3rem;}
 }
 form{
     width: min(400px, 100%);
@@ -60,7 +67,17 @@ form{
 form > div{
     width: 100%;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
+}
+form div.disabled{
+    animation: incorrect 0.3s 1 ;
+}
+@keyframes incorrect{
+    0%{margin: 0px 0px 0px 0px;}
+    25%{margin: 0px 5px 0px 0px;}
+    50%{margin: 0px 0px 0px 0px;}
+    75%{margin:0px 0px 0px 5px;}
+    100%{margin: 0px 0px 0px 0px;}
 }
 form label{
     flex-shrink: 0;
