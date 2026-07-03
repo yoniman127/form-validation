@@ -79,8 +79,8 @@ allInputs.forEach(input => {
     input.addEventListener("input", () =>{
         if(input.parentElement.classList.contains("incorrect")){
             input.parentElement.classList.remove("incorrect")
+            input.parentElement.classList.remove("disabled")
             errorMessage.innerText = ""
         }
     })
 })
-setTimeout(()=> allInputs.map(input => input.parentElement.classList.remove("disabled")),2000)
