@@ -1,0 +1,148 @@
+@font-face {
+    font-family:"Inter";
+    src: url(Inter-VariableFont_opsz\,wght.ttf);
+}
+@font-face {
+    font-family:"Bebas" ;
+    src: url(GoogleSansFlex-VariableFont_GRAD\,ROND\,opsz\,slnt\,wdth\,wght.ttf);
+}
+*{
+    padding: 0;
+    margin: 0;
+
+}
+:root{
+    --button-background-color: rgb(0, 201, 0);
+    --input-field-color: rgb(237, 237, 237);
+    --input-border-color: rgba(23, 23, 23, 0.451);
+    --text-color: black;
+}
+body{
+    font-family: "Inter";
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    background-image: url(nika_akin-leaf-4764359.jpg);
+    min-height: 100vh;
+    background-size: cover;
+    background-position: right;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+.wrapper{
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    width: max(40% , 600px);
+    padding: 10px;
+    border-radius: 0px 1rem 1rem 0px;
+    box-shadow: 0px 5px 5px 0px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: "Bebas";
+}
+form{
+    width: min(400px, 100%);
+    margin-top: 40px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+form > div{
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+}
+form label{
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: var(--button-background-color);
+    fill: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    border-radius: 32px 0px 0px 32px;
+}
+form input{
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    border-radius: 0px 32px 32px 0px;
+    border: 2px solid white;
+    border-left: none;
+    font: inherit;
+    background-color: var(--input-field-color);
+    transition: all 0.2s ease;
+}
+form input:hover{
+    border-color: var(--button-background-color);
+}
+form input:focus{
+    outline: none;
+    border-color: var(--text-color)
+}
+div:has(input:focus) > label{
+    background-color: black;
+}
+input:focus::placeholder{
+    color:black
+}
+form button{
+    margin-top: 15px;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 4em;
+    background-color: var(--button-background-color);
+    font: inherit;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+form button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.315);
+}
+form button:focus{
+    outline: none;
+    background-color: rgb(0, 255, 0);
+}
+form button:active{
+    background-color: rgb(0, 255, 0);
+}
+a{
+    text-decoration: none;
+    color: rgb(0, 255, 0);
+}
+a:hover{
+    text-decoration: underline;
+}
+@media(max-width: 1100px){
+  .wrapper{
+    width: min(600px, 100%);
+    border-radius: 0;
+  }
+}
+form div.incorrect label{
+    background-color: red;
+}
+form div.incorrect input{
+    border-color: red;
+}
+#error-message{
+    color: red;
+    font-size: 1rem;
+    font-weight: 600;
+}
